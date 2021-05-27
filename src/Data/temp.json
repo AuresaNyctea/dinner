@@ -1,16 +1,40 @@
-[
-  {
-    "businessname": "Restaurants name goes here",
-    "street": "123 Fake St",
-    "city": "Bellingham",
-    "state": "WA",
-    "zip": 98225,
-    "phone": "555-555-5555",
-    "email": "contact@restaurant.com",
-    "website": "",
-    "menu": "",
-    "hours": "",
-    "happyhourstart": "",
-    "happyhourend": ""
+ {
+    action: 'create',// create/update/delete
+    businessName: 'Test business',
+    form: {
+      businessInfo: {// matches spreadsheet tab name
+        // keys should match spreadsheet's column header names for the given tab
+        street: '',
+        state: '',
+        zip: '',
+        phone: '',
+        email: '',
+        website: '',
+        menuUrl: '',
+      },
+      hoursInfo: [// matches spreadsheet tab name
+        {
+          dayOfWeek: 'Monday',
+          open: '10',
+          close: '18'
+        },
+        {
+          dayOfWeek: 'Tuesday',
+          open: '10',
+          close: '18'
+        },
+      ],
+      eventInfo: [// matches spreadsheet tab name
+        {
+          eventName: 'Happy Hour',
+          dateOfEvent: new Date('1/1/2021'),// only required if recurringEvent is true
+          recurringEvent: false,
+          frequency: 'Daily',
+          dayOfWeek: 'Monday',
+          start: '1PM',
+          end: '5PM',
+          details: 'Sample info',
+        }
+      ]
+    },
   }
-]
